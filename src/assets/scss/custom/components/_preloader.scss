@@ -1,0 +1,54 @@
+// 
+// preloader.scss
+//
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $card-bg;
+    z-index: 9999;
+    display: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+body.loading #preloader{
+    display: block;
+}
+body #layout-wrapper{
+    filter: blur(0px);
+    transition: filter 0.3s ease-in-out;
+}
+body.loading #layout-wrapper{
+    filter: blur(5px);
+    transition: filter 0.3s ease-in-out;
+}
+#status {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: -20px 0 0 -20px;
+}
+
+.spinner{
+    .spin-icon {
+        font-size: 56px;
+        color: $primary;
+        position: relative;
+        display: inline-block;
+        animation: spin 1.6s infinite linear;
+    }
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+}
+  
